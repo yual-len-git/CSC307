@@ -14,10 +14,14 @@ function MyApp() {
      }, [] );
 
     function removeOneCharacter (index) {
+        
         const updated = characters.filter((character, i) => {
             return i !== index
             });
+        // const response = await axios.delete('http://localhost:5000/users')
+            // return response.data.users_list
         setCharacters(updated);
+
     }
 
     // function updateList(person){
