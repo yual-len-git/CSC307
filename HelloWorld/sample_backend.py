@@ -137,7 +137,7 @@ def get_user(id):
               resp = jsonify(success=True)
               resp.status_code = 204
               return resp
-      resp = jsonify({"User not found"}), 404
+         resp = jsonify({"User not found"}), 404
       return resp
    return users
 

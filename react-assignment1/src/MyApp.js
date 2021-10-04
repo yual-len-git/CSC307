@@ -14,12 +14,10 @@ function MyApp() {
     }, [] );
 
     function removeOneCharacter (index) {
-        
         const updated = characters.filter((character, i) => {
             return i !== index
             });
-        // const response = await axios.delete('http://localhost:5000/users/' )
-            // return response.data.users_list
+        delete_user(characters[index])
         setCharacters(updated);
 
     }
@@ -41,6 +39,18 @@ function MyApp() {
         <Form handleSubmit={updateList} />
         </div>
     ); 
+
+    async function delete_user(person){
+        try{
+            const response = await axios.delete('http://localhost:5000/users' + person.id)
+            return response.data//.users_list;
+
+        }
+        catch(error){
+            console.log(error);
+            return false;
+        }
+    }
     
     async function fetchAll(){
         try {
