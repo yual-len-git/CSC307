@@ -148,4 +148,10 @@ def create_id():
       new_id += random.choice(string.ascii_lowercase)
    for i in range(0, 3):
       new_id += str(random.randint(0, 9))
-   return new_id  
+   for user in users['users_list']:
+      if user['id'] == new_id:
+         new_id = ""
+         create_id()
+         break
+      else:
+         return new_id
