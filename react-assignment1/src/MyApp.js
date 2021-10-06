@@ -15,9 +15,10 @@ function MyApp() {
 
     function removeOneCharacter (index) {
         const updated = characters.filter((character, i) => {
+            delete_user(characters[index])
             return i !== index
             });
-        delete_user(characters[index])
+        // delete_user(characters[index])
         setCharacters(updated);
 
     }
